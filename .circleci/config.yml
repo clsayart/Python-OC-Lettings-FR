@@ -1,4 +1,10 @@
 version: 2.1
+
+workflows:
+  test-ci:
+    jobs:
+      - build-and-test
+
 jobs:
   build-and-test:
     docker:
