@@ -36,4 +36,4 @@ jobs:
       - run: |
           echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin
       - run: docker build -t $DOCKERHUB_USERNAME/commit:$CIRCLE_SHA1 .
-      - run: docker push claires22/python-oc-lettings-fr:latest
+      - run: docker push claires22/python-oc-lettings-fr:$DOCKERHUB_USERNAME/commit:$CIRCLE_SHA1
