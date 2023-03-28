@@ -38,5 +38,4 @@ jobs:
           echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin
           docker build -t python-oc-lettings-fr:$TAG .
           docker tag python-oc-lettings-fr:$TAG $DOCKERHUB_USERNAME/python-oc-lettings-fr:latest
-          docker push $DOCKERHUB_USERNAME/python-oc-lettings-fr:$TAG
           docker push $DOCKERHUB_USERNAME/python-oc-lettings-fr:latest
