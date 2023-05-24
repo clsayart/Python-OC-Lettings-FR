@@ -13,13 +13,13 @@ workflows:
       - build-and-test
       - build-and-push-to-dockerhub:
           requires:
-            - build-and-test # or test-ci?
+            - build-and-test
           filters:
             branches:
               only: master
       - deploy-to-heroku:
           requires:
-            - build-and-push
+            - build-and-push-to-dockerhub
           filters:
             branches:
               only: master
