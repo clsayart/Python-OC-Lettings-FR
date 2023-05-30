@@ -57,9 +57,10 @@ jobs:
           docker push $DOCKERHUB_USERNAME/python-oc-lettings-fr:$TAG
 
   deploy-to-heroku:
-    machine: true
+    executor: heroku/default
     steps:
       - checkout
+      - heroku/install
       - run:
           name: Push to heroku
           command: |
