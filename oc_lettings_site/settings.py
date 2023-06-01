@@ -114,8 +114,8 @@ STATIC_URL = '/static/'
 
 sentry_sdk.init(
     # METTRE VARIABLE SENTRY LA CREER DANS CIRCLE CI /ET HEROKU???
-    dsn=
-    "https://dff69f8b0c734ee49f835dcc5f8c9cbd@o4505272157929472.ingest.sentry.io/4505272224317440",
+    dsn="https://dff69f8b0c734ee49f835dcc5f8c9cbd@o4505272157929472"
+        ".ingest.sentry.io/4505272224317440",
     integrations=[
         DjangoIntegration(),
     ],
