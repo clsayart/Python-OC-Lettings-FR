@@ -75,3 +75,31 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Déploiement
+
+Nécessite :
+- Compte CircleCi
+- Compte Docker
+- Compte Heroku
+- Compte Sentry
+
+Le déploiement est géré par une pipeline CI/CD, détaillée dans le fichier ./.circleci/config.yml
+Seules les modifications apportées à la branche master dans GitHub déclenchent la conteneurisation et le déploiement du site.
+Les modifications apportées aux autres branches doivent uniquement déclencher la compilation et les tests
+
+URL de l'application en ligne : https://cs-oc-lettings.herokuapp.com/
+
+Dans le dépôt CircleCi renseigner les variables d'environnement :
+- `DOCKERHUB_USERNAME` = Votre identifiant DOCKERHUB
+- `DOCKERHUB_PASSWORD` = Votre mot de passe DOCKERHUB
+- `HEROKU_API_KEY` = Clé de l'application HEROKU
+- `HEROKU_APP_NAME` = Nom de l'application HEROKU
+
+Dans le fichier config.yml remplacer:
+- $DOCKERHUB_USERNAME/python-oc-lettings-fr par le nom de votre dépôt DockerHub
+
+Dans le fichier .env renseigner :
+- `SENTRY_KEY` pour l'utilisation de l'application SENTRY
+
+L'URL suivante : `https://cs-oc-lettings.herokuapp.com/sentry-debug/` soulève une exception pour tester le bon fonctionnement de Sentry
