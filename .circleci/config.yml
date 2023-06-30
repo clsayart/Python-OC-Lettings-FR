@@ -8,7 +8,7 @@ workflows:
   test-ci:
     jobs:
       - build-and-test
-      - build-and-push-to-dockerhub
+      # - build-and-push-to-dockerhub
   build-and-push-and-deploy:
     jobs:
       - build-and-test
