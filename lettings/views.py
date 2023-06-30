@@ -27,6 +27,7 @@ def index(request):
 # eget bibendum lorem. Sed non dolor risus.
 # Mauris condimentum auctor elementum. Donec quis nisi ligula.
 # Integer vehicula tincidunt enim, ac lacinia augue pulvinar sit amet.
+# rajout test branche
 
 
 def letting(request, letting_id):
