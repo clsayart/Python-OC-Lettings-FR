@@ -117,7 +117,8 @@ django_heroku.settings(locals())
 
 sentry_sdk.init(
     # METTRE VARIABLE SENTRY LA CREER DANS CIRCLE CI /ET HEROKU???
-    dsn="https://2c2c4625daca4788a2b6f948c634afbe@o4505272157929472.ingest.sentry.io/4505482021699584",
+    dsn="https://2c2c4625daca4788a2b6f948c634a"
+        "fbe@o4505272157929472.ingest.sentry.io/4505482021699584",
     integrations=[
         DjangoIntegration(),
     ],
