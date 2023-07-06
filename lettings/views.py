@@ -6,6 +6,7 @@ from .models import Letting
 # Sed non placerat massa. Integer est nunc, pulvinar a tempor et, bibendum id arcu.
 # Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 # posuere cubilia curae; Cras eget scelerisque
+# push test
 
 
 def index(request):
