@@ -41,6 +41,10 @@ jobs:
           name: Linting
           command: flake8
 
+    environment:
+      SENTRY_KEY: $SENTRY_KEY
+
+
   build-and-push-to-dockerhub:
     docker:
       - image: cimg/python:3.10.1
@@ -56,6 +60,9 @@ jobs:
           docker tag python-oc-lettings-fr:$TAG $DOCKERHUB_USERNAME/python-oc-lettings-fr:$TAG
           docker push $DOCKERHUB_USERNAME/python-oc-lettings-fr:$TAG
 
+    environment:
+      SENTRY_KEY: $SENTRY_KEY
+
   deploy-to-heroku:
     executor: heroku/default
     steps:
@@ -70,3 +77,6 @@ jobs:
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a ${HEROKU_APP_NAME} web
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a ${HEROKU_APP_NAME} web
+
+    environment:
+      SENTRY_KEY: $SENTRY_KEY
