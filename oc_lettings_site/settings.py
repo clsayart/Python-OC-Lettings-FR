@@ -117,15 +117,14 @@ django_heroku.settings(locals())
 
 sentry_sdk.init(
     # METTRE VARIABLE SENTRY LA CREER DANS CIRCLE CI /ET HEROKU???
-    dsn=os.environ.get("""https://dff69f8b0c734ee49f835dcc5f8c9cbd@o4
-    505272157929472.ingest.sentry.io/4505272224317440"""),
+    dsn="https://2c2c4625daca4788a2b6f948c634afbe@o4505272157929472.ingest.sentry.io/4505482021699584",
     integrations=[
         DjangoIntegration(),
     ],
 
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
-    # We recommend adjusting this value in production.
+    # We recommend adjusting this value in production. os.environ.get()
     traces_sample_rate=1.0,
 
     # If you wish to associate users to errors (assuming you are using
